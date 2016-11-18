@@ -47,3 +47,11 @@ altMap f p [] = []
 altMap f p (x:xs) = (f x : altMap p f xs)
 
 --Ten
+luhnDouble :: Int -> Int
+luhnDouble a = do
+    if a > 4
+       then a * 2 - 9
+       else a * 2
+
+luhn :: [Int] -> Bool
+luhn (x) = mod (sum ( altMap (+0) (luhnDouble) x )) 10 == 0
