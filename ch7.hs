@@ -1,5 +1,3 @@
---One
-
 --one :: (a -> b) (a -> Bool) -> [a] -> [a]
 one m f (x) = Prelude.map m (filter f x)
 
@@ -27,10 +25,22 @@ dropWhile f (x:xs) = do
        else (x:xs)
 
 --Three
---map :: (a -> b) -> [a] -> [b]
---map f (x) = (foldr f []) x
+map :: (a -> b) -> [a] -> [b]
+map f (x) = foldr (\a ax -> (f a:ax)) [] x
 
 --Four
 dec2int :: [Int] -> Int
 dec2int [x] = x
 dec2int (x:xs) = foldl (\a1 a2 -> a1 * 10 + a2) x xs
+
+--Five
+
+--Six
+
+--Seven
+
+--Eight
+
+--Nine
+
+--Ten
