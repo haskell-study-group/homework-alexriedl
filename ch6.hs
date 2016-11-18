@@ -59,11 +59,14 @@ halve a = do
 msort :: Ord a => [a] -> [a]
 msort [] = []
 msort [x] = [x]
+msort (x) = merge (msort (fst (halve x))) (msort (snd (halve x)))
+    {-
 msort (x) = do
     let h = halve x
     let a = fst h
     let b = snd h
     merge (msort a) (msort b)
+    -}
    
 --Nine
 sum :: [Int] -> Int
