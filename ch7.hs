@@ -42,5 +42,8 @@ dec2int (x:xs) = foldl (\a1 a2 -> a1 * 10 + a2) x xs
 --Eight
 
 --Nine
+altMap :: (a -> b) -> (a -> b) -> [a] -> [b]
+altMap f p [] = []
+altMap f p (x:xs) = (f x : altMap p f xs)
 
 --Ten
