@@ -34,8 +34,16 @@ dec2int [x] = x
 dec2int (x:xs) = foldl (\a1 a2 -> a1 * 10 + a2) x xs
 
 --Five
+curry :: ((a, b) -> c) -> a -> b -> c
+curry f x y = f (x, y)
+
+uncurry :: (a -> b -> c) -> (a, b) -> c
+uncurry f (x, y) = f x y
 
 --Six
+--chop8
+--map f
+--iterate f
 
 --Seven
 
