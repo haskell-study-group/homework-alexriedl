@@ -41,7 +41,11 @@ uncurry :: (a -> b -> c) -> (a, b) -> c
 uncurry f (x, y) = f x y
 
 --Six
+unfold p h t x | p x       = []
+               | otherwise = h x : unfold p h t (t x)
 --chop8
+chop8 = unfold (null) (take 8) (take 8)
+
 --map f
 --iterate f
 
